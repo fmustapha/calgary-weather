@@ -17,7 +17,7 @@ class  WeekComponent extends Component {
     getWeatherDetails = () => {
         const cityId = process.env.REACT_APP_CITY_ID;
         const apiKey = process.env.REACT_APP_KEY;
-        axios.get(`http://api.openweathermap.org/data/2.5/forecast?id=${cityId}&APPID=${apiKey}&units=metric&cnt=12`)
+        axios.get(`https://api.openweathermap.org/data/2.5/forecast?id=${cityId}&APPID=${apiKey}&units=metric&cnt=12`)
             .then(response => this.setState({forcast:response.data.list}))
             .catch(error => this.setState({error:error}))
     }
