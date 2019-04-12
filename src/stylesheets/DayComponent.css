@@ -1,0 +1,24 @@
+.day-forcast {
+    /* border: 1px solid grey; */
+    border-collapse: collapse;
+    border-radius: 4%;
+    background: #F5F5F5;
+    box-shadow: 5px 5px 3px;
+    padding:0px 5px;
+    color: rgb(5, 81, 133);
+}
+
+.card:hover {
+    -ms-transform: (1.5);
+    -webkit-transform: (1.5);
+    transform: scale(1.05);
+}
+
+.icon {
+    align-self: center;
+    /* color: orange; */
+}
+
+.card-align {
+    text-align: left;
+}
