@@ -1,5 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# calgary-weather
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It consumes the [Open Weather App API](https://openweathermap.org/).
+The application enables you view the weather in calgary every three hours for two to three consecutive days (2 - 3) days.
+
+
+## Steps to setup the app
+In your terminal run `git clone https://github.com/fmustapha/calgary-weather.git`
+
+Next, change directory to the app folder.
+
+Rename the `.sample.env` file to `.env` and set the API key with your API key from [Open Weather App API](https://openweathermap.org/).
+
+Run `npm install` to install app dependencies
+
+Run `npm test` to run app test
+
+Run `npm start` to start the app
+
+## Read additional notes on Create React App below
 ## Available Scripts
 
 In the project directory, you can run:
@@ -59,11 +77,25 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ma
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
+### Deployment on Heroku
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- Sign up for Heroku
+    Follow the instructions on the site to setup a new account if you have none. Ensure to confirm your account in your email box to activate your account.
+- Install Heroku CLI. Follow instructions here to install Heroku for your operating system.
+- Enter the following command in your terminal to verify that you have correctly installed Heroku on your computer.
+    `heroku --version`
+    You should see your heroku version like so --> heroku/7.22.1 darwin-x64 node-v11.9.0
+- Create Heroku git repository
+    Go to your terminal and navigate to the application folder.
+    On your terminal run the following commands:
+        `heroku login`
+        `heroku create calgary-weather --buildpack mars/create-react-app`
+        `heroku config:set REACT_APP_KEY=”your api key”`
+        `heroku config:set REACT_APP_CITY_ID=”Calgary city id - 5913490”`
+        `git remote -v (confirm that a remote named heroku has been set for your app)
+        `git push heroku develop:master (this deploys the apps develop branch to the master branch on heroku).
 
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# calgary-weather
+
