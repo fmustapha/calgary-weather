@@ -5,67 +5,52 @@ import DayComponent  from '../components/DayComponent';
 
 configure ({ adapter: new Adapter() });
 
-const setUp = (props={}) => {
-    const component = shallow(<DayComponent {...props} />);
-    return component;
-}
-
 describe('DayComponent', () => {
-
-    let component;
-    beforeEach(() => {
-        const props = {
-            index: 1,
-            icon: {
-                alt: "mist",
-                src: "faWater",
-                color: "black",
-                id: "7"
+    const props = {
+        index: 1,
+        icon: {
+            alt: "mist",
+            src: "faWater",
+            color: "black",
+            id: "7"
+        },
+        details: {
+            dt_txt: " 2019-04-13 15:00:00",
+            main: { 
+                temp: 34.0
             },
-            details: {
-                dt_txt: " 2019-04-13 15:00:00"
+            wind: {
+                speed: 78
             }
-        };
-        component = setUp(props);
-        
-    });
-    describe('Have props', ()=> {
-        test('should render a card', () => {
-            console.log(component.debug())
-            const wrapper = component.find('.card');
-            expect(wrapper.length).toBe(1);
-        });
-
-        test('should render a font awesome icon', () => {
-            const wrapper = component.find('.icon');
-            expect(wrapper.length).toBe(1);
-        });
-
-        test('should render the body of the card', () => {
-            const wrapper = component.find('.card-body .card-align');
-            expect(wrapper.length).toBe(1);
-        });
-
-        test('should render a date', () => {
-            const wrapper = component.find('.card-title');
-            expect(wrapper.length).toBe(1);
-        });
-
-        test('should render a date', () => {
-            const wrapper = component.find('.card-title');
-            expect(wrapper.length).toBe(1);
-        });
-        
-        test('should render a date', () => {
-            const wrapper = component.find('p');
-            expect(wrapper.length).toBe(2);
-        });
+        }
+    };
+  
+    const wrapper = shallow(<DayComponent
+      {...props}
+    />);
+  
+    it('renders the card div', () => {
+        expect(wrapper.find('.card').length).toBe(1);
     });
 
+    it('renders the Font Awesome Icon component', () => {
+      expect(wrapper.find('FontAwesomeIcon').length).toBe(1);
+    });
+
+    it('renders the card details wrapper', () => {
+        expect(wrapper.find('.card-body').length).toBe(1);
+    });
+
+    it('renders the weather date', () => {
+        expect(wrapper.find('.card-title').length).toBe(1);
+    });
+
+    it('renders the days temperature and wind speed', () => {
+        expect(wrapper.find('.card-text').length).toBe(2);
+    });
+    
     describe('Have no props', ()=> {
-        let component;
-        beforeEach(() => {
-            component = setUp();
-            });
+        const props = {};
+        const wrapper = shallow(<DayComponent {...props} />);
     });
 });
