@@ -10,5 +10,5 @@ const HeaderComponent = (props) => {
             </header>
          );
 }
- 
+
 export default HeaderComponent;

@@ -5,10 +5,11 @@ import DayComponent from './DayComponent'
 
 //Stylesheet
 import '../stylesheets/WeekComponent.css';
+
 require('dotenv').config();
 
 class  WeekComponent extends Component {
-    state = { forcast: [], error:[], status: 'initial' }
+    state = { forcast: [], error:{}, status: "initial" }
 
     componentDidMount() {
         this.getWeatherDetails()
@@ -28,12 +29,13 @@ class  WeekComponent extends Component {
         const { forcast, status } = this.state;
         return (
             <div className="wrapper">
-            {status === "loading" && <h3>Loading forcast...</h3>}
+            {status === "loading" && <h3 id="load">Loading forcast...</h3>}
             {status === "completed"
             && forcast.length === 0
-            && <h3>No forcast information available for now, please visit site later.</h3>}
+            && <h3 id="no-info">No weather information available for now, please visit site later.</h3>}
             {status === "error"
-            && <h3>An error occured while loading forcast data...please visit site later.</h3>}
+            && <h3 id="error-info">An error occured while loading forcast data...please visit site later.</h3>}
+
             {forcast.map((details, index) => { 
                 const weatherIcon = getIcon(details.weather[0].icon);
                 return (
@@ -44,7 +46,6 @@ class  WeekComponent extends Component {
             </div>
         );
     }
-
 }
- 
+
 export default WeekComponent;

@@ -29,23 +29,23 @@ describe('DayComponent', () => {
       {...props}
     />);
   
-    it('renders the card div', () => {
+    test('renders the card div', () => {
         expect(wrapper.find('.card').length).toBe(1);
     });
 
-    it('renders the Font Awesome Icon component', () => {
+    test('renders the Font Awesome Icon component', () => {
       expect(wrapper.find('FontAwesomeIcon').length).toBe(1);
     });
 
-    it('renders the card details wrapper', () => {
+    test('renders the card details wrapper', () => {
         expect(wrapper.find('.card-body').length).toBe(1);
     });
 
-    it('renders the weather date', () => {
+    test('renders the weather date', () => {
         expect(wrapper.find('.card-title').length).toBe(1);
     });
 
-    it('renders the days temperature and wind speed', () => {
+    test('renders the days temperature and wind speed', () => {
         expect(wrapper.find('.card-text').length).toBe(2);
     });
     
