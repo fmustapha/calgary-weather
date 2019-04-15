@@ -4,9 +4,13 @@ import '../stylesheets/DayComponent.css';
 
 
 const DayComponent = (props) => {
-    const { index , icon, details} = props;
+    const {icon, details} = props;
+
+    if(!details) {
+        return null;
+    }
     return (
-        <div className="card" key={index}>
+        <div className="card" key={icon.id}>
             <FontAwesomeIcon key={icon.id} className="icon" color={icon.color} icon={icon.src} size="5x"/>
             <div className="card-body card-align">
                 <h5 className="card-title">Date: {details.dt_txt}</h5>
