@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheets/HeadingComponent.css';
 
 const HeaderComponent = (props) => {
         return ( 
@@ -6,7 +7,7 @@ const HeaderComponent = (props) => {
                 <div className="heading">
                 <h1>Calgary Weather Forcast</h1>
                 </div>
-                <p className="description">View 3 hour forcast for three days below</p>
+                <p className="description">View 3 hour forcast for up to three days below</p>
             </header>
          );
 }

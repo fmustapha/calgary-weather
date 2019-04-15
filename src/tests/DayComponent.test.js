@@ -33,6 +33,10 @@ describe('DayComponent', () => {
         expect(wrapper.find('.card').length).toBe(1);
     });
 
+    test('renders the icon div', () => {
+        expect(wrapper.find('.icon-div').length).toBe(1);
+    });
+    
     test('renders the Font Awesome Icon component', () => {
       expect(wrapper.find('FontAwesomeIcon').length).toBe(1);
     });
@@ -45,10 +49,10 @@ describe('DayComponent', () => {
         expect(wrapper.find('.card-title').length).toBe(1);
     });
 
-    test('renders the days temperature and wind speed', () => {
-        expect(wrapper.find('.card-text').length).toBe(2);
+    test('renders other weather details', () => {
+        expect(wrapper.find('.card-text').length).toBe(3);
     });
-    
+
     describe('Have no props', ()=> {
         const props = {};
         const wrapper = shallow(<DayComponent {...props} />);
