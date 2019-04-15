@@ -18,6 +18,11 @@
     align-self: center;
 }
 
+.icon-div {
+    background: #F0F8FF;
+    /* height: 50px; */
+}
+
 .card-align {
     text-align: left;
 }
