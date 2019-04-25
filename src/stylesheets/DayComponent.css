@@ -1,10 +1,7 @@
-.day-forcast {
-    /* border: 1px solid grey; */
+.card {
     border-collapse: collapse;
     border-radius: 4%;
     background: #F5F5F5;
-    box-shadow: 5px 5px 3px;
-    padding:0px 5px;
     color: rgb(5, 81, 133);
 }
 
@@ -20,7 +17,8 @@
 
 .icon-div {
     background: #F0F8FF;
-    /* height: 50px; */
+   padding-top: 20px;
+   padding-bottom: 20px;
 }
 
 .card-align {
