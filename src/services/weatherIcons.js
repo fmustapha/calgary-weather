@@ -1,9 +1,13 @@
 import icons from '../img/index'
 
 const getIcon = (icon) => {
-    if(icon === '01d' || icon === '01n') {
+    if(icon === '01d') {
         return  icons.sun
-    } else if(icon === '02d' || icon === '02n') {
+    } else if (icon === '01n') {
+        return icons.moon
+    } else if (icon === '02n') {
+        return icons.moonCloud
+    } else if(icon === '02d') {
         return icons.rainSunCloud
     } else if(icon === '03d' || icon === '03n'){
         return icons.rainyL
@@ -20,7 +24,7 @@ const getIcon = (icon) => {
     } else if(icon === '50d' || icon === '50n'){
         return icons.mist
     } else {
-        return icons.sun
+        return icons.clouds
     }
 }
 

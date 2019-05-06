@@ -1,26 +1,23 @@
 .card {
-    border-collapse: collapse;
-    border-radius: 4%;
-    background: #F5F5F5;
-    color: rgb(5, 81, 133);
+  color: rgb(5, 81, 133);
 }
 
 .card:hover {
-    -ms-transform: (1.5);
-    -webkit-transform: (1.5);
-    transform: scale(1.05);
+  -ms-transform: (1.5);
+  -webkit-transform: (1.5);
+  transform: scale(1.05);
 }
 
 .icon {
-    align-self: center;
+  align-self: center;
 }
 
 .icon-div {
-    background: #F0F8FF;
-   padding-top: 20px;
-   padding-bottom: 20px;
+  background: #f0f8ff;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .card-align {
-    text-align: left;
+  text-align: left;
 }
